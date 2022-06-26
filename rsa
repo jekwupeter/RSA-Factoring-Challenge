@@ -19,9 +19,9 @@ def _isprime(num):
     if num in [2, 3, 5, 7, 11, 13, 17]:
         return True
 
-    #tmp = list(range(19, num))
-    #random.shuffle(tmp)
-    for i in range(19, num):
+    tmp = list(range(19, num))
+    random.shuffle(tmp)
+    for i in tmp:
         if (num % i) == 0:
             return False
 
