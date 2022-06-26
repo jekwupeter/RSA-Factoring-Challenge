@@ -10,12 +10,20 @@ def _fact(n):
     Returns:
         a list of two integers that multiplies to give input number
     """
-    holder = [None, None]
-    for i in range(2, n):
+    for i in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]:
+        holder = [None, None]
         if n % i == 0:
             holder[0] = i
             holder[1] = int(n / i)
             return holder
+
+    for i in range(31, n):
+        holder = [None, None]
+        if n % i == 0:
+            holder[0] = i
+            holder[1] = int(n / i)
+            return holder
+
 
 with open(sys.argv[1], 'r') as file_buffer:
     for line in file_buffer:
