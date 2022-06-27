@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import sys
 import math
-import random
 
 def _isprime(num):
     """checks if a number is a prime number
@@ -12,16 +11,10 @@ def _isprime(num):
     Returns:
         True if number is prime else false
     """
-    flag = True
-    if num < 0 and (not isinstance(num, int)):
-        return False
-
-    if num in [2, 3, 5, 7, 11, 13, 17]:
+    if num in [2, 3, 5]:
         return True
 
-    tmp = list(range(19, num))
-    random.shuffle(tmp)
-    for i in tmp:
+    for i in range(3, num, 2):
         if (num % i) == 0:
             return False
 
